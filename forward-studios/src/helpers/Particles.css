@@ -1,0 +1,45 @@
+@keyframes floatUpSlow {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+}
+
+@keyframes floatDownSlow {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+}
+
+.animate-float-up-slow {
+    animation-name: floatUpSlow;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+.animate-float-down-slow {
+    animation-name: floatDownSlow;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}

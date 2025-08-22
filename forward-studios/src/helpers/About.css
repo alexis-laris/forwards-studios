@@ -1,0 +1,80 @@
+.shimmer-text {
+    position: relative;
+    color: white;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0.15) 100%);
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 2.5s infinite linear;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.zoom-hover {
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    user-select: none;
+}
+
+.zoom-hover:hover {
+    transform: scale(1.1);
+    color: #a855f7;
+}
+
+.bounce-underline {
+    position: relative;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.125rem;
+}
+
+.bounce-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    height: 2px;
+    width: 0;
+    background-color: #a855f7;
+    border-radius: 1px;
+    pointer-events: none;
+    transition: width 0.25s ease;
+    transform-origin: left center;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.bounce-underline:hover::after {
+    width: 100%;
+    animation: bounceWidth 0.35s forwards;
+}
+
+@keyframes bounceWidth {
+    0% {
+        width: 0;
+    }
+
+    60% {
+        width: 110%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

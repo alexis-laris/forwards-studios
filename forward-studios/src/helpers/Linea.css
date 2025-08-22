@@ -1,0 +1,64 @@
+.saturate-zero {
+    filter: saturate(0);
+    opacity: 0.6;
+    transition: filter 0.8s ease, opacity 0.8s ease;
+}
+
+.saturate-full {
+    filter: saturate(1);
+    opacity: 1;
+    transition: filter 0.8s ease, opacity 0.8s ease;
+}
+
+.confetti-container {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    margin-top: 20px;
+    overflow: visible;
+    animation: confetti-fall 2.5s ease forwards;
+}
+
+.confetti-container::before,
+.confetti-container::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 18px;
+    background-color: #FFD700;
+    opacity: 0.8;
+    border-radius: 2px;
+    animation: confetti-shake 0.9s infinite alternate;
+}
+
+.confetti-container::before {
+    left: 30%;
+    animation-delay: 0s;
+}
+
+.confetti-container::after {
+    left: 60%;
+    animation-delay: 0.4s;
+}
+
+@keyframes confetti-fall {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+}
+
+@keyframes confetti-shake {
+    0% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(15deg);
+    }
+}
